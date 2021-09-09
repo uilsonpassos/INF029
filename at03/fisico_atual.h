@@ -1,0 +1,1 @@
+float fisico_atual(float preparamento_fisico, float sequencia_jogos);

@@ -29,7 +29,7 @@ void digite_nome(dados_pessoa * no){
 void digite_sexo(char * sexo){
     printf("Sexo: \n");
     scanf(" %c", (& sexo));
-}
+	}
 
 void digite_cpf(dados_pessoa * cp){
     printf("CPF: \n");

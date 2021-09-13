@@ -20,12 +20,12 @@ int cadastro(){
         fgets(dados.nome, 20, stdin);
         printf("SEXO: ");
         scanf("%c", &dados.genero);
-            fflush(stdin);
         printf("DATA DE NASCIMENTO: ");
         scanf("%s", dados.data_nascimento);
-            fflush(stdin);
+            getchar();
         printf("CPF: ");
         fgets(dados.cpf, 14, stdin);
+            
         
     }
     
@@ -89,7 +89,5 @@ int main()
     validagenero();
     validadata();
     validacpf();
-
-    
 
 }

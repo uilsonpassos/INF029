@@ -15,6 +15,7 @@
         printf("NOME: \n");
         fgets(nombre.nome, 100, stdin);
         
+        
         return nombre;
     }
     
@@ -23,8 +24,18 @@
         
         printf("SEXO: \n");
         fgets(sex.sexo, 2, stdin);
+        getchar();
         
         return sex;
+    }
+    
+    dados_pessoa inserirdata(){
+        dados_pessoa DATA;
+        
+        printf("DATA DE NASCIMENTO: \n");
+        fgets(DATA.data_nascimento, 20, stdin);
+        
+        return DATA;
     }
     
     dados_pessoa inserircpf(){
@@ -36,14 +47,6 @@
         return CP;
     }
     
-    dados_pessoa inserirdata(){
-        dados_pessoa DATA;
-        
-        printf("DATA DE NASCIMENTO: \n");
-        fgets(DATA.data_nascimento, 20, stdin);
-        
-        return DATA;
-    }
     
     
 

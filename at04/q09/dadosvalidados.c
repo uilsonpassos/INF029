@@ -1,48 +1,95 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-typedef struct pessoa{
-   
-    char nome[100];
-    char sexo;
-    int cpf;
-    int dia, mes, ano;
 
-}dados_pessoa;
+typedef struct{
+        
+    int geral;
+    char nome[20];
+    char genero;
+    char data_nascimento[10];        
+    char cpf[14];
+}dados_pessoais; 
 
-void digite_data(dados_pessoa * dma){
-    printf("Digite o dia: \n");
-    scanf("%d", &(*dma).dia);
-   
-    printf("Digite o mes: \n");
-    scanf("%d", &(*dma).mes);
+    
+int cadastro(){
+    dados_pessoais dados;
+    dados.geral = -1;
 
-    printf("Digite o ano: \n");
-    scanf("%d", &(*dma).ano);
+        printf("NOME: ");
+        fgets(dados.nome, 20, stdin);
+        printf("SEXO: ");
+        scanf("%c", &dados.genero);
+            fflush(stdin);
+        printf("DATA DE NASCIMENTO: ");
+        scanf("%s", dados.data_nascimento);
+            fflush(stdin);
+        printf("CPF: ");
+        fgets(dados.cpf, 14, stdin);
+        
+    }
+    
 
-}
+    dados_pessoais validanome(){
+        dados_pessoais dados;
+        int inome;
+        int dadonome = 0;
+        
+        while(dados.nome[inome] != '\0'){
+            inome++;
+        }
+        if (inome > 20){
+            printf("Erro ---- Nome invalido");
+        }
+    }
+    
+    dados_pessoais validagenero(){
+        dados_pessoais dados;
+        int dadogenero = 0;
+        
+        if(dados.genero != 'M' && dados.genero != 'm' && dados.genero != 'F' && dados.genero != 'f'  && dados.genero != 'O' && dados.genero != 'o'){
+            printf("Erro ---- Genero incorreto ");;
+        }
+    }
+    
+    dados_pessoais validadata(){
+        dados_pessoais dados;
+        int idata;
+        int dadodata = 0;
+        
+        while(dados.data_nascimento[idata] != '\0'){
+            idata++;
+        }
+        
+        if (idata > 10){
+            printf("Erro ---- Data incorreta");
+        }
+    }
+    
+    dados_pessoais validacpf(){
+        dados_pessoais dados;
+        int icpf;
 
-void digite_nome(dados_pessoa * no){
-    printf("Nome: \n");
-    scanf("%s", &(*no).nome[0]);
-}
-
-void digite_sexo(char * sexo){
-    printf("Sexo: \n");
-    scanf(" %c", (& sexo));
-}
-
-void digite_cpf(dados_pessoa * cp){
-    printf("CPF: \n");
-    scanf("%d", &(*cp).cpf);
-}
+        while(dados.cpf[icpf] != '\0'){
+            icpf++;
+        }
+        
+        if (icpf > 11){
+            printf("Erro ---- CPF incorreto");
+        }
+    }
+        
 
 
 int main()
-{
-    dados_pessoa ler_data;
-    digite_data(&ler_data);
-    digite_sexo(&ler_data);
+{   
+    cadastro();
+    
+    validanome();
+    validagenero();
+    validadata();
+    validacpf();
 
+    
 
-    return 0;
 }

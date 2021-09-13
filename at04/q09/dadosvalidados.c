@@ -12,7 +12,7 @@ typedef struct{
 }dados_pessoais; 
 
     
-int cadastro(){
+dados_pessoais cadastro(){
     dados_pessoais dados;
     dados.geral = -1;
 
@@ -26,7 +26,7 @@ int cadastro(){
         printf("CPF: ");
         fgets(dados.cpf, 14, stdin);
             
-        
+        return dados;
     }
     
 
@@ -83,11 +83,9 @@ int cadastro(){
 
 int main()
 {   
-    cadastro();
+    dados_pessoais dados;
+    dados = cadastro();
     
-    validanome();
-    validagenero();
-    validadata();
-    validacpf();
+
 
 }
